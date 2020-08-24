@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>HMST-Seq-Analyzer</title>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161768301-1"></script>
+  <script>  
+          window.dataLayer = window.dataLayer || []; 
+          function gtag() { dataLayer.push(arguments); } 
+          gtag('js', new Date());  
+   
+          gtag('config', 'UA-161768301-1');
+  </script>
+
+
+
+ 
+  <style>
+	.head{
+	  background-color : white;
+	  padding: 40px;
+	  text-align: center;
+	  }
+
+		.title{
+	  background-color : white;
+	  padding: 50px;
+	  text-align: center;
+	  border-style: groove;
+	  border-radius: 25px;
+	  margin-bottom: 20px;
+	  }
+	  .author{
+	  background-color : lightgrey;
+	  padding: 10px;
+	  text-align: center;
+	  //height : 100px;
+	  
+	  }
+	  .author_des{
+	  background-color : white;
+	  padding: 20px;
+	  text-align: center;
+	  //height : 100px;
+	  
+	  }
+
+	  .abstract{
+	  background-color :lightgrey;
+	  padding: 30px
+	  }
+	  .abstract_des{
+	  background-color :white;
+	  padding: 40px
+	  }
+	  
+	  .how_to{
+	  background-color :lightgrey;
+	  padding: 20px
+	  }
+	  .how_to_des{
+	  background-color :white;
+	  padding: 40px
+	  }
+		
+	.conents{
+	  background-color :lightgrey;
+	  padding: 20px
+	  }
+	  .contets_des{
+	  background-color :white;
+	  padding: 40px
+	  }
+	  .tasks{
+	  background-color :lightgrey;
+	  padding: 20px
+	  }
+	  .tasks_des{
+	  background-color :white;
+	  padding: 40px
+	  }    
+	.demo{
+	  background-color :lightgrey;
+	  padding: 20px
+	  }
+	  .demo_des{
+	  background-color :white;
+	  padding: 40px
+	  }
+	.tool_box{
+	  background-color :lightgrey;
+	  padding: 20px
+	  }
+	  .tool_box_des{
+	  background-color :white;
+	  padding: 40px
+	  }
+	.ref{
+	  background-color :lightgrey;
+	  padding: 20px
+	  }
+	  .ref_des{
+	  background-color :white;
+	  padding: 40px
+	  }
+
+	  .footer{
+	  background-color :#4FEDB8;
+	  padding: 10px
+	  }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+
+<div class = "container-fluid head">
+
+	<div class="row"> 
+		<div class="col-sm-3">
+			<img src="helsesorost.png" class="img-thumbnail" alt="helsesorost" >
+		</div>
+		<div class="col-sm-3">
+			<img src="ous.png" class="img-thumbnail" alt="Oslo University Hospital" >
+		
+		</div>
+	</div>
+</div>
+
+
+<!-- First Section header -->
+<div class = "container-fluid title">
+
+	<div class="row"> 
+		
+			<h1>HMST-Seq-Analyzer: <small> A New Python Tool for Differential Methylation and Hydroxymethylation Analysis in Various DNA Methylation Sequencing Data </small> </h1>
+	
+	</div>
+</div>
+
+
+<!-- Second Section -->
+<div class = "container-fluid author">
+
+	<div class="row"> 
+		
+			<h2> Authors:</h2>
+	
+	</div>
+</div>
+
+<div class = "container-fluid author_des">
+
+	<div class="row"> 
+		
+			<strong> Amna Farooq <sup>1</sup>, Sindre Grønmyr <sup>2</sup>, Torbjørn Rognes <sup>2,4</sup>, Katja Scheffler <sup>5,6</sup> , Magnar Bjørås <sup>3,4</sup>, Junbai Wang <sup>1*</sup> </strong>
+			<p></p>
+			<p></p>
+			<p>1.	Department of Pathology, Oslo University Hospital - Norwegian Radium Hospital, Oslo, Norway </p>
+			<p>2.	Department of Informatics, University of Oslo, Oslo, Norway </p>
+				
+			<p>3.	Institute for Clinical and Molecular Medicine, Norwegian University of Science and Technology, Trondheim, Norway.</p>
+				
+			<p>4.	Department of Microbiology, Oslo University Hospital and University of Oslo, Oslo, Norway. </p>
+
+			<p>5.	Department of Neuromedicine and Movement Science and Department of Clinical and Molecular Medicine, Norwegian University of Science and Technology, Trondheim, Norway.</p>
+
+			<p>6.	Department of Neurology and Department of Laboratory Medicine, St. Olavs Hospital, Trondheim, Norway.</p>
+
+			<p>*To whom correspondence should be addressed.Email: junbai.wang@rr-research.no </p>
+	
+	</div>
+</div>
+
+
+<!-- Third Section -->
+		
+
+<div class = "container-fluid abstract">
+
+	<div class="row"> 
+		
+			<h2> Abstract:</h2>
+	
+</div>
+
+<div class = "container-fluid abstract_des">
+
+	<div class="row"> 
+		
+			<p> DNA methylation (5mC) and hydroxymethylation (5hmC) are chemical modifications of cytosine bases which play a crucial role in epigenetic gene regulation. However, cost, data complexity and unavailability of comprehensive analytical tools is one of the major challenges in exploring these epigenetic marks. Hydroxymethylation-and Methylation-Sensitive Tag sequencing (HMST-seq) is one of the most cost-effective techniques that enables simultaneous detection of 5mC and 5hmC at single base pair resolution. We present HMST-Seq-Analyzer as a comprehensive and robust method for performing simultaneous differential methylation analysis on 5mC and 5hmC data sets. HMST-Seq-Analyzer can detect Differentially Methylated Regions (DMRs), annotate them, give a visual overview of methylation status and also perform preliminary quality check on the data.  In addition to HMST-Seq, our tool can be used on whole-genome bisulfite sequencing (WGBS) and reduced representation bisulfite sequencing (RRBS) data sets as well. The tool is written in Python with capacity to process data in parallel and is available at (https://hmst-seq.github.io/hmst/).</p>
+	
+	</div>
+</div>
+
+			
+
+		
+<!-- Fourth Section HOW TO -->
+
+<div class = "container-fluid how_to">
+
+	<div class="row"> 
+		
+			<h2> How to start:</h2>
+	
+	</div>
+</div>
+
+<div class = "container-fluid how_to_des">
+
+	<div class="row"> 
+		
+			<p> <strong>HMST-Seq-Analyzer</strong> is written in python. It can be installed and accessed from command line and is avalible for both linux and mac operating systems. <strong><A href="HMST-Seq-Analyzer.tgz" >The package can be downloaded here</strong>  </p></A>
+            <p> Prior to installing the package, dependencies must be fulfilled.List of dependencies is as follows:</p>
+			<ul>
+				<li>bedtools</li> 
+				<li>setuptools</li>
+				<li>itertools</li>
+				<li>pandas</li>
+				<li>numpy</li>
+				<li>argparse</li>
+				<li>os</li>
+				<li>shutil</li>
+				<li>multiprocessing</li>
+				<li>matplotlib</li>
+				<li>seaborn</li>
+				<li>datetime</li>
+				<li>scipy</li>
+				<li>tempfile</li>
+				<li>time</li>
+				<li>matlab.engine</li>
+				<li>numba</li>
+				</ul>
+			<p> It is advised to install dependencies using miniconda.</p>
+            <p> Package contains a file <strong>requirments.txt</strong> which can be used for automatic installation of dependencies from conda or pip.</p>
+			<p>To install the package, go to the HMST-Seq-Analyzer directory and type:
+				<code>python setup.py install</code>
+			<p>For more detials, follow the <code>readme</code> file in the package</p>
+
+</p>
+	</div>
+</div>
+
+<!-- test 5th Section  package contents -->
+
+<div class = "container-fluid contents">
+
+	<div class="row"> 
+		
+			<h2> Contents of the package:</h2>
+	</div>
+</div>
+
+<div class = "container-fluid contets_des">
+
+	<div class="row"> 
+		
+			<p>The package folder will contain following:</p>
+			<ul>
+				<li><code>demo</code> : Contains demo data sets.</li>
+				<li><code>hmst-seq-analyzer</code> : Contains python soruce code of pipeline.</li>
+				<li><code>readme.txt</code> : Instructions about usage of package.</li>
+				<li><code>requirments.txt</code> :  List of requirments. Can be used for automatic installation from miniconda or pip.</li>
+				<li><code>setup.py</code>: Setup file for package.</li>
+
+
+			</ul>	
+	</div>
+</div>
+
+<!-- 6th Section  TASKS -->
+<div class = "container-fluid tasks">
+
+	<div class="row"> 
+		
+			<h2> Pipeline Tasks:</h2>
+	</div>
+</div>
+
+<div class = "container-fluid tasks_des">
+
+	<div class="row"> 
+		
+			<p> The pipeline consists of follwoing 8 tasks. To run a task, type <code>hmst_seq_analyzer &#60;task> [&#60;args>]</code>. To see what are the options for each task of the pipeline, please run: <code>hmst_seq_analyzer <task> -h</code> </p>
+			<ul>
+				<li><code>gene_annotation</code> : Cleans reference file and creates genomic region files (TSS, geneBody, TES, 5dist and intergenic) from the reference</li>
+				<li><code>data_preprocessing</code> : Creation of 5mC and 5hmC files, quantile normalization</li>            
+                <li><code>find_MRs</code> : Extracts genomic regions from 5mC/5hmC-files and finds methylated regions</li>  
+                <li><code>prepare_for_DMR_finding</code> : Finds overlapping methylated regions between MRs in WT condition samples and KO condition samples
+				</li>      
+				<li><code>DMR_search</code> : Finds differentially methylated regions</li> <li><code>prep4plot</code> : Prepares files for plotting</li>  
+				<li><code>plot_all</code> : Plots hyper versus hypo differentially methylated regions, and relative density of significantly modified sites in MRs</li>   
+              	<li><code>clean_files</code> : Removes some unwanted files. Please only use after prep4plot is already done</li>
+
+                              
+                              </ul>	
+	</div>
+</div>
+
+
+<!-- 7th Section  DEMO -->
+
+<div class = "container-fluid demo">
+
+	<div class="row"> 
+		
+			<h2> Demo:</h2>
+	</div>
+</div>
+
+<div class = "container-fluid demo_des">
+
+	<div class="row"> 
+		<p>Test run is available on public hg19 data, present in demo folder. </p>
+		<p>In folder <code>HMST-Seq-analyzer/demo</code> , there is a sbatch file: 
+		<code>job_demo_HMST.sbatch</code>	</p>
+		<p> which can be run by entering: <code>sbatch job_demo_HMST.sbatch</code> , in the command line to run the demo automatically. </p>
+
+	</div>
+</div>	
+	
+<!-- 8th Section  tool box -->
+
+<div class = "container-fluid tool_box">
+
+	<div class="row"> 
+		
+			<h2> Tool Box:</h2>
+	</div>
+</div>
+
+
+<div class = "container-fluid tool_box_des">
+
+	<div class="row"> 
+		
+			<p>The Tool Box can be used for: Cleaning and sorting input methylation data, Extracting data for single chromosome or splitting it chromosome wise from input methylation files and calculating average read count between the range 1-5, 6-10, 11-15, 16-20 for quality check of input data.</p>
+			<p>The tool box can be found : <code>HMST-Seq-Analyzer_amna/demo</code></p>
+			<ul>
+			<p>For cleaning and sorting input: <code>python avg_read_coverage.py --In_path data-sample.txt --Out_path out  --Org hum</code></p>
+			<p>For cleaning sorting input and extracting data for one chromosome : <code>python avg_read_coverage.py --In_path data-sample.txt --Out_path out  --Org hum --Chr 17</code></p>
+			<p>For cleaning sorting input and splitting data chromosome wise : <code>avg_read_coverage.py --In_path data-sample.txt --Out_path out  --Org hum --Chr all</code></p>
+			<p>For cleaning sorting input and calculating average read count : <code>python avg_read_coverage.py --In_path data-sample.txt --Out_path out  --Org hum --Avg_read y</code></p>
+			</ul>
+	</div>
+</div>
+
+<!-- 9th Section  References -->
+
+<div class = "container-fluid ref">
+
+	<div class="row"> 
+		
+			<h2> References:</h2>
+	</div>
+</div>
+
+<div class = "container-fluid ref_des">
+
+	<div class="row"> 
+		
+			<ol>
+				<li>Gao, F., et al., Integrated detection of both 5-mC and 5-hmC by high-throughput tag sequencing technology highlights methylation reprogramming of bivalent genes during cellular differentiation. Epigenetics, 2013. 8(4): p. 421-430.</li>
+			</ol>
+	</div>
+</div>
+
+</body>
+</html>
